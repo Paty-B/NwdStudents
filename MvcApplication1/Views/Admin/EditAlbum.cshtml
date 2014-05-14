@@ -48,7 +48,7 @@
         var newDiv = document.createElement('div');
         var divIdName = 'my'+num+'Div';
         newDiv.setAttribute('id', divIdName);
-        newDiv.innerHTML = @Html.TextBoxFor(a => a.Tracks.ElementAt('+num+').Song) <input type="file" id="file'+num+'" />';
+        //newDiv.innerHTML = Html.TextBoxFor(a => a.Tracks.ElementAt('+num+').Song) <input type="file" id="file'+num+'" />';
         containerDiv.appendChild(newDiv);
         $.get('/Admin/Album/TrackTemplate',"id=1",function(html){
             newDiv.innerHTML = html;

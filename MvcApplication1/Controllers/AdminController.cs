@@ -69,9 +69,9 @@ namespace MvcApplication1.Controllers
             return View("Album", album);
         }
 
-        public ActionResult TrackTemplate()
+        public ActionResult TrackTemplate(Album album)
         {
-            return PartialView("TrackTemplate", );
+            return PartialView("TrackTemplate", album);
         }
     }
 }
