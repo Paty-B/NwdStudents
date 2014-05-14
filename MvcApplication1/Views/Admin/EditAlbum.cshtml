@@ -32,6 +32,26 @@
                 @Html.EditorFor( a => a.ReleaseDate)
             </li>
         </ol>
+        <input type="hidden" value="0" id="theValue" />
+        <p><a href="javascript:;" onclick="addElement();">Ajouter</a></p>
+        <div id="TrackFields"></div>
         <input type="submit" value="Valider" />    
     </fieldset>
 }
+
+<script type="text/javascript">
+    function addElement() {
+        var containerDiv = document.getElementById('TrackFields');
+        var numi = document.getElementById('theValue');
+        var num = (document.getElementById('theValue').value -1)+ 2);
+        numi.value = num;
+        var newDiv = document.createElement('div');
+        var divIdName = 'my'+num+'Div';
+        newDiv.setAttribute('id', divIdName);
+        newDiv.innerHTML = @Html.TextBoxFor(a => a.Tracks.ElementAt('+num+').Song) <input type="file" id="file'+num+'" />';
+        containerDiv.appendChild(newDiv);
+        $.get('/Admin/Album/TrackTemplate',"id=1",function(html){
+            newDiv.innerHTML = html;
+        });
+    }
+</script>

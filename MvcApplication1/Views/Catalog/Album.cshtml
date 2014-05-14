@@ -1,0 +1,45 @@
+﻿@using Nwd.BackOffice.Model;
+@model Album
+
+@{
+    ViewBag.Title = "Album";
+}
+
+<h2>Album</h2>
+
+<ul>
+    <li>
+        Titre : 
+        @Model.Title
+    </li>
+    <li>
+        Style : 
+        @Model.Type
+    </li>
+    <li>
+        Artiste :
+        @Model.Artist.Name
+    </li>
+    <li>
+        Date de sortie :
+        @Model.ReleaseDate.Date
+    </li>
+    <li>
+        Durée :
+        @Model.Duration
+    </li>
+</ul>
+
+<h3>
+    Tracks : 
+</h3>
+
+<ul>
+    
+    @foreach (var track in Model.Tracks)
+    {
+         HttpPostedFileBase file = track.File;
+         String name = file.FileName;
+         <li>name</li>
+    }
+</ul>

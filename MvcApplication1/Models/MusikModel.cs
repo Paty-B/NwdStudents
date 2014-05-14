@@ -20,5 +20,13 @@ namespace MvcApplication1.Models
         [DataType(DataType.Date)]
         [Display(Name = "ReleaseDate")]
         public DateTime ReleaseDate { get; set; }
+
+        [DataType(DataType.Time)]
+        [Display(Name = "Duration")]
+        public TimeSpan Duration { get; set; }
+
+        [DataType(DataType.ImageUrl)]
+        [Display(Name = "Image")]
+        public string ImageUrl { get; set; }
     }
 }
