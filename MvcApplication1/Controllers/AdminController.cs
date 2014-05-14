@@ -68,5 +68,10 @@ namespace MvcApplication1.Controllers
             repo.EditAlbum(server, album);
             return View("Album", album);
         }
+
+        public ActionResult TrackTemplate()
+        {
+            return PartialView("TrackTemplate", );
+        }
     }
 }
