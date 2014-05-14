@@ -1,0 +1,37 @@
+﻿@using Nwd.BackOffice.Model;
+@model Album
+
+@{
+    ViewBag.Title = "EditAlbum";
+}
+
+<hgroup class="title">
+    <h1>@ViewBag.Title.</h1>
+    <h2>Editer un Album.</h2>
+</hgroup>
+
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+
+    <fieldset>
+        <legend>Formulaire d'edition d'album</legend>  
+        <ol>  
+            <li>   
+                 @Html.LabelFor(a => a.Title) 
+                 @Html.TextBoxFor(a => a.Title)   
+            </li> 
+            <li>
+                @Html.LabelFor(a => a.Artist)
+                @Html.TextBoxFor(a=> a.Artist)
+            </li>      
+            <li>
+                
+                @Html.LabelFor(a => a.ReleaseDate)
+                @Html.EditorFor( a => a.ReleaseDate)
+            </li>
+        </ol>
+        <input type="submit" value="Valider" />    
+    </fieldset>
+}

@@ -1,0 +1,15 @@
+﻿@using Nwd.BackOffice.Model;
+@model List<Album>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Albums</h2>
+@Html.ActionLink("Nouvel Album", "NewAlbum", "Admin")
+<ul>
+    @foreach (var album in Model)
+    {
+        <li>@Html.ActionLink(album.Title, "Album", "Admin", new {id = album.Id}, null)</li>
+    }
+</ul>
